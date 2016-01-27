@@ -1,0 +1,26 @@
+//Le Bon coin
+
+"title": "LeBonCoin Schema",
+	"type": "object",
+	"properties": {
+		"town": {
+			"type": "string"
+		},
+		"price": {
+			"type": "integer"
+		},
+		"typeBien": {
+			"type":"string"
+			}
+		"area":{
+			"type": "integer"
+		}
+		"codeCity":{
+			"type":"integer"
+		}
+		"category":{
+			"type":"string"
+		}
+	},
+	"required": ["price", "codeCity","area","LocAchat"]
+}

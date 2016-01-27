@@ -1,0 +1,19 @@
+//Meileur Agent
+
+"title": "MeilleurAgent Schema",
+	"type": "object",
+	"properties": {
+		"price": {
+			"type": "integer"
+		},
+		"typeBien": {
+			"type":"string"
+			}
+		"codeCity":{
+			"type":"integer"
+		}
+		"category":{
+			"type":"string"
+		}
+	},
+	"required": ["price", "codeCity","area","LocAchat"]
