@@ -20,12 +20,20 @@ router.get('/', function(req, res) {
 
 router.post('/',function (req, res)
 {	
-	var prixAgent=0.0;
+	
 
    boncoin(req.body.url, function (resultat) //name = nom de l'imput
-   {		
-	/*mAgents("/prix-immobilier/"+resultat.city+"-"+resultat.codeCity+"/#estimates" , function (result){
+   {	
+    var prixAgent=0.0;
+	var Gdeal = "test";	
+	var Bdeal =" ";
+	mAgents("/prix-immobilier/"+resultat.city+"-"+resultat.codeCity+"/#estimates" , function (result){
 		
+		var typeBien = resultat.typeLogement;
+		var city = resultat.city;
+		var price = resultat.price;
+		var codeCity= resultat.codeCity;
+		var image = resultat.imageBien;
 				
 		if(resultat.typeBien === "Ventes")
 			{
@@ -39,27 +47,30 @@ router.post('/',function (req, res)
 						prixAgent = parseFloat(result.priceHouse)*parseFloat(resultat.area);			
 					}									
 			}
-		if(	resultat.typeBien === "Locations")
-		{
-			prixAgent = parseFloat(result.priceRent)*parseFloat(resultat.area);
-		}
-
-		
-		if ( prixAgent > resultat.price)
-		{
-			console.log("BAD CHOICE");
-		}
-		else
-			console.log("GOOD DEAL");
-			   
-		});		
-		
+			if(	resultat.typeBien === "Locations")
+			{
+				prixAgent = parseFloat(result.priceRent)*parseFloat(resultat.area);
+			}		
+			if ( prixAgent <= resultat.price)
+			{
+				console.log("BAD CHOICE");
+				Bdeal = "BAD CHOICE";
+				
+				res.render('contact',{city:city, Bdeal:Bdeal, price:price, typeBien:typeBien, prixAgent:prixAgent,codeCity:codeCity,image:image});
+			}
+			else
+			{
+				console.log("GOOD DEAL");
+				Gdeal = "GOOD DEAL ";
+				res.render('contact',{city:city, Gdeal:Gdeal, price:price, typeBien:typeBien, prixAgent:prixAgent,codeCity:codeCity,image:image});
+			} 
+			
+			
+			console.log(result);
+			
+				
+		});
 		console.log(resultat);
-		console.log(prixAgent);*/
-		var city = resultat.city;		
-		var bla = resultat.price;
-		
-		res.render('contact',{city:city, bla:bla});	
 	});
 });
 

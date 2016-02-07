@@ -7,21 +7,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-    <header class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">Comparateur</a>
-            </div>
-			<ul class="nav navbar-nav">
-			  <li class="active"><a href="#">Home</a></li>
-			  <li><a href="#">About</a></li>
-			  <li><a href="#">Contact</a></li>			  
-			</ul>
-            <div class="collapse navbar-collapse">
-            </div>
-        </div>
-    </header>
+<div id="container">
+	<header>
+		<nav id="custom-bootstrap-menu" class="navbar-default">				
+				<div class="container">	
+				<div class="navbar-header">
+					<img src="./stylesheets/logo.png"/>										
+				</div>			
+					<div class="navbar-collapse collapse">				
+					 <a class="navbar-brand" href="/">CheckDeal</a>
+						<ul class="nav navbar-nav ">						
+							<li>
+								<a href="#">Home</a>
+							</li>
+							<li>
+								<a href="#">About</a>
+							</li>
+							<li>
+								<a href="#">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>		
+	</header>
  {% block content %}{% endblock %}
 </div>
 </body>

@@ -1,8 +1,6 @@
 var http = require('http');
 var htmlToJson = require("html-to-json");
 var toLowerCase = require('to-lower-case');
-var Diacritics = require('diacritic');
-
 
 module.exports = function (url, callback){
 	downloadUrl(url, function(data){
@@ -26,7 +24,10 @@ module.exports = function (url, callback){
 				},
 				'typeLogement':function(doc){
 			  		return getType(doc.find('div[class="lbcParams criterias"]')[0].children[1])+"";
-				}
+				},
+				'imageBien': function(doc){
+				return doc.find('div[class="images_cadre"]')[0].children[1].attribs.style.split(" ")[1].split("'")[1];
+				}					
 			}, function (err, result) {
 				
 				if(err)

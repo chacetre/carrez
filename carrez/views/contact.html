@@ -1,25 +1,99 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<section class="container">
-
-    <form role="form" action="/" method="post">        
+<section class="container">	
+	
+	<div id="page">
+	
+	{% if Gdeal %}	
+	
+	<form role="form" action="/" method="post">        
         <div class="form-group">
-            <label for="name">Url a traiter</label>
-            <input type="text" name="url" class="form-control" id="url" placeholder="Enter URL">
+            <label for="name">Lien de votre bien</label>
+            <input type="text" name="url" class="form-control" id="url" placeholder="Entrer lien http">
         </div>        
-        <button type="submit" class="btn btn-default">Rechercher</button>		
+        <button type="submit" class="btn btn-default pull-right">Rechercher</button>		
     </form>
 	
-	{% if city %}
+	<div id="cont">
+		<div class="row" id="row">
+			<div class="col-sm-6">
+				<h4>Votre bien : </h4>
+				<img id="imagebien" src="{{image}}" >
+							
+			</div>
+			<div id="estimation">
+			<div class="col-sm-6">			
+			<p align="left" vertical-align="middle"> Ville: {{city}} ({{codeCity}})
+			<br>Type de bien: {{typeBien}}
+			 Prix de vente: {{price}} </br>			
+			</p>
+			</div>
+			</div>
+			
+			<div id="prixe">
+			<h4>Estimation de meilleurAgents.com :</h4>
+			<p><font size="6" color="green">{{prixAgent}}</font></p>
+			</div>
+			
+		</div>
+		<div class="alert alert-success">
+			<font size="6"><u>{{Gdeal}}</u></font>			
+		</div>
+	</div>
+		
+	{% elseif Bdeal %}	
+	
+	
+	<form role="form" action="/" method="post">        
+        <div class="form-group">
+            <label for="name">Lien de votre bien</label>
+            <input type="text" name="url" class="form-control" id="url" placeholder="Entrer lien http">
+        </div>        
+        <button type="submit" class="btn btn-default pull-right">Rechercher</button>		
+    </form>
 	
 	<div id="cont">
-    <div class="alert alert-success alert-dismissable">
-        <b>{{city}}</b> 
-		<u>{{bla}}</u>
+	<div class="row" id="row">
+			<div class="col-sm-6">
+				<h4>Votre bien : </h4>
+
+				<img id="imagebien" src="{{image}}">
+			</div>
+			<div id="estimation">
+			<div class="col-sm-6">			
+			<p align="left" vertical-align="middle"> Ville: {{city}} ({{codeCity}})
+				<br>Type de bien: {{typeBien}}
+				<br>Prix de vente: {{price}} </br>	</br>		
+			</p>
+			</div>
+			</div>
+			
+			<div id="prixe">
+			<h4>Estimation de meilleurAgents.com :</h4>
+			<p><font size="6"  color="red">{{prixAgent}}</font></p>
+			</div>
+			</div>
+		<div class="alert alert-warning"> 
+			<font size="6"><u>{{Bdeal}}</u></font>		
+		</div>
 	</div>
-	</div>
+	{% else %}
+	<p> Ce site permet de comparer le prix d'une annonce immobilière(extraite de leboncoin.fr) avec le prix estimer par meilleurAgents.com.
+	<br>Il vous suffit d'entrer le lien de l'annonce dans la case juste en bas. Nous vous dirons si c'est vous allez faire une bonne affaire.
+	<br></br>
+	<br>Pour ne rencontrer aucun problème, nous vous demandons d'entrez des URLs extraitent exculsivement du site leboncoin.fr. De plus nous ne pouvons comparer que des annonces situé dans des villes ne comportant aucun accent et aucun arrondissement. </br>	</br>	</p>
+	
+	<form role="form" action="/" method="post">        
+        <div class="form-group">
+            <label for="name">Lien de votre bien</label>
+            <input type="text" name="url" class="form-control" id="url" placeholder="Entrer lien http">
+        </div>        
+        <button type="submit" class="btn btn-default pull-right">Rechercher</button>		
+    </form>
     {% endif %}
+		
+	</div>
 	
 </section>
 {% endblock %}

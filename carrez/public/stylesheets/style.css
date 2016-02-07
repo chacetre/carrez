@@ -1,13 +1,97 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
+a{
   color: #00B7FF;
 }
 
 #cont
 {
-	margin-top : 20px;
+	margin-top : 10px;
+	text-align:center;
 }
+
+img{
+	max-width: 30%;
+	margin-top : 10px;
+}
+header 
+{
+  width : 300 px;
+}
+#imagebien
+{
+	max-width : 90%;
+	margin-bottom: 10px;
+}
+#estimation
+{
+	margin-top:50px ;
+	font-size : 17px;
+	margin-bottom:50px;
+}
+#prixe
+{
+	margin-top:150px;
+}
+
+#page
+{
+	margin-top : 10px;
+}
+#custom-bootstrap-menu.navbar-default {
+  background-color: #045FB4;
+  border-color: #045FB4;
+  height:50px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+#custom-bootstrap-menu.navbar-default .navbar-brand:hover,
+#custom-bootstrap-menu.navbar-default .navbar-brand:focus {
+  color: #ffbbbc;
+}
+#custom-bootstrap-menu.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav > li > a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav > li > a:focus {
+  color: #ffbbbc;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav > .active > a,
+#custom-bootstrap-menu.navbar-default .navbar-nav > .active > a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffbbbc;
+  background-color: #c0392b;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav > .open > a,
+#custom-bootstrap-menu.navbar-default .navbar-nav > .open > a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffbbbc;
+  background-color: #c0392b;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+  border-color: #c0392b;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+  background-color: #c0392b;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+#custom-bootstrap-menu.navbar-default .navbar-collapse,
+#custom-bootstrap-menu.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+#custom-bootstrap-menu.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+#custom-bootstrap-menu.navbar-default .navbar-link:hover {
+  color: #ffbbbc;
+}
+
